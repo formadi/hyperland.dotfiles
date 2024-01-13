@@ -16,10 +16,10 @@ for ((i = 0; i < bar_length; i++)); do
 done
 
 # Create cava config
-config_file="/tmp/bar_cava_config"
-cat >"$config_file" <<EOF
-[general]
-bars = 10
+# config_file="/tmp/bar_cava_config"
+# cat >"$config_file" <<EOF
+# [general]
+# bars = 10
 
 [output]
 method = raw
@@ -29,4 +29,4 @@ ascii_max_range = 7
 EOF
 
 # Read stdout from cava and perform substitution in a single sed command
-cava -p "$config_file" | sed -u "$dict"
+# cava -p "$config_file" | sed -u "$dict"
