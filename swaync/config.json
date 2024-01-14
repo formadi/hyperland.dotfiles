@@ -5,7 +5,7 @@
   	"layer": "overlay",
   	"control-center-layer": "top",
   	"layer-shell": true,
- 	"cssPriority": "application",
+ 	  "cssPriority": "application",
     "control-center-margin-top": 5,
     "control-center-margin-bottom": 0,
     "control-center-margin-right": 0,
@@ -31,9 +31,9 @@
     "widgets": [
        	"dnd",
         "buttons-grid",
-		"mpris",
-    	"volume", 
-   	 	"backlight",
+		    "mpris",
+    	  "volume",
+ 	      "backlight",
         "title",
         "notifications"
     ],
@@ -51,7 +51,7 @@
             "text": "Notification"
         },
         "mpris": {
-            "image-size": 10,
+            "image-size": 80,
             "image-radius": 0
         },
         "volume": {
@@ -63,7 +63,7 @@
         "buttons-grid": {
             "actions": [
                 {
-                    "label": "󰐥",
+                    "label": "󰐥 ",
                     "command": "systemctl poweroff"
                 },
                 {

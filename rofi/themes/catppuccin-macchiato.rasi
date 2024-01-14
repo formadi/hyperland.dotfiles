@@ -1,9 +1,11 @@
 * {
     bg-col:  #24273a;
+    bg-col-opa: #27273a80;
     bg-col-light: #24273a;
     border-col: #24273a;
     selected-col: #24273a;
     blue: #8aadf4;
+    blue-dark: #9cccdf;
     fg-col: #cad3f5;
     fg-col2: #ed8796;
     grey: #6e738d;
@@ -76,8 +78,9 @@ element-icon {
 }
 
 element selected {
-    background-color:  @selected-col ;
-    text-color: @teal  ;
+    background-color:  @blue-dark;    /* PJG : @selected-col; */
+    text-color:        @bg-col;  /* PJG : @teal;         */
+    border-radius:     6px;      /* PJG : add new..      */
 }
 
 mode-switcher {
