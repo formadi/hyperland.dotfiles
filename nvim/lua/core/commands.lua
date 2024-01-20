@@ -25,6 +25,8 @@ if _G.color_scheme.lualine == true then
   })
 end
 
+-- this is a test  이것은 테스트 입니다.
+
 
 -- custom color
 if     _G.color_scheme.name == "catppuccin" then
@@ -145,19 +147,16 @@ vim.cmd [[
   :autocmd WinLeave    * set nocursorline
 ]]
 
+-- this is a 테스트
 
 
--- -- call function when change to command mode
--- vim.cmd[[
---   autocmd CmdlineEnter * lua changeInputSource()
--- ]]
---
--- -- call function when change to visual mode
--- vim.cmd[[
---   autocmd VisualEnter * lua changeInputSource()
--- ]]
---
--- function YourFunction()
---   -- 여기에 실행할 함수 내용을 적습니다.
---   print("모드가 변경되었습니다.")
--- end
+function ChangeInputSource()
+  -- vim.cmd(':silent !fcitx5 -c')
+  -- vim.cmd(':redraw!')
+  vim.fn.system('fcitx5-remote -c')
+end
+
+-- call function when change to command mode
+vim.cmd[[
+  autocmd InsertLeave * lua ChangeInputSource()
+]]
