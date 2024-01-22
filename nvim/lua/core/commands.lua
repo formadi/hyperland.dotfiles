@@ -147,13 +147,12 @@ vim.cmd [[
   :autocmd WinLeave    * set nocursorline
 ]]
 
--- this is a 테스트
 
 
+
+-- change to English mode of InputSource (fcitx5)
 function ChangeInputSource()
-  -- vim.cmd(':silent !fcitx5 -c')
-  -- vim.cmd(':redraw!')
-  vim.fn.system('fcitx5-remote -c')
+  vim.fn.system('fcitx5-remote -c')  --  무조건 영문 상태로 되돌아 간다.
 end
 
 -- call function when change to command mode
