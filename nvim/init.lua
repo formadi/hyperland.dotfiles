@@ -1,7 +1,4 @@
 
--- for image.nvim
-package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
-package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
 
 -- catppuccin ,  everforest  , nord , iceberg , vscode , poimandres , monochrome
 _G.color_scheme_name = "catppuccin"
@@ -17,6 +14,9 @@ vim.g.python3_host_prog    = "home/elsa/.config/venv/bin/python3"
 vim.g.loaded_perl_provider = 0
 
 
+-- for image.nvim
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
 
 -- If you need to verify whether image.nvim is functioning correctly
 -- ------------------------------------------------------------------

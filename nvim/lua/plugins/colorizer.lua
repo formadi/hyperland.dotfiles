@@ -6,7 +6,7 @@ return {
     require('colorizer').setup ({
       user_default_options = {
         mode        = "virtualtext",
-        virtualtext = "􀏄",
+        virtualtext = "󰹞",
       },
     })
   end,

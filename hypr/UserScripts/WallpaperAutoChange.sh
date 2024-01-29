@@ -20,7 +20,7 @@ export SWWW_TRANSITION_FPS=60
 export SWWW_TRANSITION_TYPE=simple
 
 # This controls (in seconds) when to switch to the next image
-INTERVAL=1800
+INTERVAL=18000
 
 while true; do
 	find "$1" \
@@ -29,9 +29,9 @@ while true; do
 		done \
 		| sort -n | cut -d':' -f2- \
 		| while read -r img; do
-			swww img "$img" 
+			swww img "$img"
 			$pywal_refresh
 			sleep $INTERVAL
-			
+
 		done
 done

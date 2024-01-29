@@ -1,18 +1,22 @@
 return {
   "nvim-neorg/neorg",
+  version="7.0.0",
   build = ":Neorg sync-parsers",
   run = ":Neorg sync-parsers",
   dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
   config = function()
     require("neorg").setup ({
       load = {
-        ["core.defaults"]    = {}, -- Loads default behaviour
+        ["core.defaults"]               = {}, -- Loads default behaviour
         ["core.integrations.telescope"] = {},
-        ["core.ui"]          = {},
-        ["core.syntax"]      = {},
-				-- ["core.ui.calendar"] = {},
-        ["core.keybinds"]    = {},
-        ["core.concealer"]   = { -- Adds pretty icons to your documents
+        ["core.ui"]                     = {},
+        ["core.syntax"]                 = {},
+				["core.ui.calendar"]            = {},
+        ["core.tempus"]                 = {},
+        -- ["core.autocommands"]           = {},
+        -- ["core.highlights"]             = {},
+        ["core.keybinds"]               = {},
+        ["core.concealer"]              = { -- Adds pretty icons to your documents
           config = {
             icons = {
               code_block = {
@@ -46,8 +50,8 @@ return {
         },
         ["core.esupports.indent"] = {
           config = {
-            formet_on_enter = false,
-            format_on_escape = false,
+            formet_on_enter  = true,
+            format_on_escape = true,
           },
         },
         ["core.summary"] = {
