@@ -51,7 +51,8 @@ handle() {
             if [ "$mode" = "1" ]; then
                 # echo "Changing floating mode to 1"
                 # 크기를 변경
-                hyprctl dispatch "centerwindow" ; hyprctl dispatch "resizeactive exact 2000 1600"
+                # hyprctl dispatch "centerwindow" ; hyprctl dispatch "resizeactive exact 2000 1600"
+                hyprctl dispatch "resizeactive exact 2000 1600" ; hyprctl dispatch "centerwindow"
 
             # elif [ "$mode" = "0" ]; then
                 # echo "Changing floating mode to 0"
