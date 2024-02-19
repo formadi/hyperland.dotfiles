@@ -20,7 +20,7 @@ handle() {
                     hyprctl dispatch "layoutmsg mfact 0.5"  ; hyprctl dispatch "layoutmsg orientationright"  # ; hyprctl reload
                     ;;
                 *)
-                    hyprctl dispatch "layoutmsg mfact 0.45" ; hyprctl dispatch "layoutmsg orientationcenter" # ; hyprctl reload
+                    hyprctl dispatch "layoutmsg mfact 0.4"  ; hyprctl dispatch "layoutmsg orientationcenter" # ; hyprctl reload
                     ;;
             esac
             ;;
@@ -32,6 +32,11 @@ handle() {
             clients_info=$(hyprctl clients -j)
             matching_windows=$(echo "$clients_info" | jq -r --arg workspace_id "$workspace_id" --arg workspace_name "$workspace_name" 'map(select(.workspace.id == ($workspace_id | tonumber) and .workspace.name == $workspace_name and .floating == false)) | length')
 
+            activewindowInfo=$(hyprctl activewindow -j)
+            at_value=$(echo "$activewindowInfo" | grep -o '"at": \[[0-9]*, [0-9]*\]' | sed 's/"at": \[\([0-9]*, [0-9]*\)\]/\1/')
+            x_coord=$(echo "$at_value" | awk -F', ' '{print $1}')
+            y_coord=$(echo "$at_value" | awk -F', ' '{print $2}')
+
             # echo "Matching non-floating windows for workspace $workspace_name (ID: $workspace_id): $matching_windows"
 
             case $matching_windows in
@@ -42,22 +47,38 @@ handle() {
                     hyprctl dispatch "layoutmsg mfact 0.5"  ; hyprctl dispatch "layoutmsg orientationright"  # ; hyprctl reload
                     ;;
                 *)
-                    hyprctl dispatch "layoutmsg mfact 0.45" ; hyprctl dispatch "layoutmsg orientationcenter" # ; hyprctl reload
+                    hyprctl dispatch "layoutmsg mfact 0.4"  ; hyprctl dispatch "layoutmsg orientationcenter" # ; hyprctl reload
                     ;;
             esac
 
             # changefloatingmode에 대한 처리
             mode=$(echo "$1" | awk -F',' '{print $NF}')
+
+            # entrance to floatingmode
             if [ "$mode" = "1" ]; then
+                # floating window의 x좌표값을 저장함.
+                # 이것은 floating 하기 직전의 좌표임.
+                echo "$x_coord" > /tmp/floatingwindX.txt
+                # echo "$y_coord" > /tmp/floatingwindY.txt
+
                 # echo "Changing floating mode to 1"
                 # 크기를 변경
                 # hyprctl dispatch "centerwindow" ; hyprctl dispatch "resizeactive exact 2000 1600"
                 hyprctl dispatch "resizeactive exact 2000 1600" ; hyprctl dispatch "centerwindow"
 
-            # elif [ "$mode" = "0" ]; then
-                # echo "Changing floating mode to 0"
-            # else
-                # echo "Invalid mode: $mode"
+            # exit from floatingmode
+            elif [ "$mode" = "0" ]; then
+              stored_x_coord=$(cat /tmp/floatingwindX.txt)
+              # stored_y_coord=$(cat /tmp/floatingwindY.txt)
+              hyprctl movewindow $stored_x_coord, $stored_y_coord
+              if [ $stored_x_coord -eq 2036 ]; then
+                echo "오른쪽 윈도우로 복귀"
+                hyprctl dispatch "layoutmsg swapprev"
+              elif [ $stored_x_coord -eq 800 ]; then
+                echo "가운데 윈도우로 복귀"
+                hyprctl dispatch "layoutmsg swapprev" ; hyprctl dispatch "layoutmsg swapprev"
+              fi
+              # 왼쪽 윈도우의 경우 아무런 조치를 하지 않아도 됨.
             fi
         # *)
         #     # echo "undefined command: $1"
