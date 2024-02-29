@@ -43,7 +43,7 @@ exit
 🤨 face with raised eyebrow face distrust scepticism disapproval disbelief surprise
 😐 neutral face indifference meh :| neutral
 😑 expressionless face face indifferent - - meh deadpan
-😶 face without mouth face hellokitty
+😶 face without mouth face hellofoot
 😏 smirking face face smile mean prank smug sarcasm
 😒 unamused face indifference bored straight face serious sarcasm unimpressed skeptical dubious side eye
 🙄 face with rolling eyes face eyeroll frustrated

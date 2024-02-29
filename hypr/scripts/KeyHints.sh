@@ -38,7 +38,7 @@ yad --width=$dynamic_width --height=$dynamic_height \
     --column=Command: \
     --timeout-indicator=bottom \
 "ESC" "close this app" "" "=" "SUPER KEY (Windows Key)" "(SUPER KEY)" \
-" enter" "Terminal" "(kitty)" \
+" enter" "Terminal" "(foot)" \
 "ALT" "App Launcher" "(rofi)" \
 " T" "Open File Manager" "(Thunar)" \
 " Q" "close active window" "(not kill)" \

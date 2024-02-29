@@ -6,20 +6,20 @@ plugins = [
 
 [scratchpads.stb]
 animation = "fromBottom"
-command = "kitty --class kitty-stb sstb"
-class = "kitty-stb"
+command = "foot --class foot-stb sstb"
+class = "foot-stb"
 lazy = true
 size = "75% 45%"
 
 [scratchpads.stb-logs]
 animation = "fromTop"
-command = "kitty --class kitty-stb-logs stbLog"
-class = "kitty-stb-logs"
+command = "foot --class foot-stb-logs stbLog"
+class = "foot-stb-logs"
 lazy = true
 size = "75% 40%"
 
 [scratchpads.term]
 animation = "fromTop"
-command = "kitty --class kitty-dropterm"
-class = "kitty-dropterm"
+command = "foot --class foot-dropterm"
+class = "foot-dropterm"
 size = "75% 60%"
