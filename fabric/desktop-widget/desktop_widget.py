@@ -27,6 +27,8 @@ date_fabricator    = Fabricate(poll_from="date", interval=10000)  # 10000 millis
 weather_fabricator = Fabricate(poll_from="date", interval=600000) # 10분
 
 
+
+#===================================================================================================================
 class ClockWidget(Window):
     def __init__(self, **kwargs):
 
@@ -51,21 +53,23 @@ class ClockWidget(Window):
         )
 
     def update_weather(self,fabricator, value):
-        weather_output = subprocess.check_output(["/home/elsa/.config/fabric/desktop-widget/Weather.sh"])
+        # weather_output = subprocess.check_output(["/home/elsa/.config/fabric/desktop-widget/Weather.sh"])
+        #
+        # # 바이트 문자열을 문자열로 디코딩
+        # # weather_data = weather_output.decode("utf-8").strip()
+        # weather_data = json.loads(weather_output)
+        # print(weather_data)
+        #
+        # # 각 필드를 변수에 할당
+        # self.text  = weather_data["text"]
+        # self.alt   = weather_data["alt"]
+        # # tooltip = weather_data["tooltip"]
+        self.text = "test"
+        self.alt  = "yangchun-gu"
 
-        # 바이트 문자열을 문자열로 디코딩
-        # weather_data = weather_output.decode("utf-8").strip()
-        weather_data = json.loads(weather_output)
-        print(weather_data)
-
-        # 각 필드를 변수에 할당
-        self.text  = weather_data["text"]
-        self.alt   = weather_data["alt"]
-        # tooltip = weather_data["tooltip"]
 
 
-
-
+#===================================================================================================================
 class CalendarWidget(Window):
     def __init__(self, **kwargs):
         self.calendar_text = ""
@@ -101,10 +105,15 @@ class CalendarWidget(Window):
                 else:
                     row.append(f"{day:2d}")
             rows.append(row)
+
         calendar_text = "\n".join([" ".join(row) for row in rows])
+        print (calendar_text)
+
         return calendar_text
 
 
+
+#===================================================================================================================
 class CalendarWidgetToday(Window):
     def __init__(self, **kwargs):
         self.calendar_text = ""
@@ -143,10 +152,12 @@ class CalendarWidgetToday(Window):
                 else:
                     row.append("  ")
             rows.append(row)
+
         calendar_text = "\n".join([" ".join(row) for row in rows])
         return calendar_text
 
 
+#===================================================================================================================
 class CalendarWidgetOverlay(Window):
     def __init__(self, **kwargs):
         self.calendar_text = ""
@@ -184,10 +195,12 @@ class CalendarWidgetOverlay(Window):
                 else:
                     row.append("  ")
             rows.append(row)
+
         calendar_text = "\n".join([" ".join(row) for row in rows])
         return calendar_text
 
 
+#===================================================================================================================
 def apply_style(*args):
     logger.info("[Desktop Widget] CSS applied")
     return set_stylesheet_from_file(get_relative_path("desktop_widget.css"))
@@ -195,6 +208,7 @@ def apply_style(*args):
 
 
 
+#===================================================================================================================
 if __name__ == "__main__":
     desktop_widget         = ClockWidget()
     calendar_widget        = CalendarWidget()
