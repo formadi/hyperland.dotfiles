@@ -32,40 +32,57 @@ weather_fabricator = Fabricate(poll_from="date", interval=600000) # 10분
 class ClockWidget(Window):
     def __init__(self, **kwargs):
 
+        self.weather_text = ""
+        self.alt_text     = ""
+
+        self.update_weather_label = Label(
+            label=f"{self.weather_text}",
+            name="weather",
+        )
+
+        self.update_location_label = Label(
+            label=f"{self.alt_text}",
+            name="location",
+        )
+
         self.update_weather(None, None)
 
         super().__init__(
-            layer="bottom",
+            layer="layer",
             anchor="left top right",
             margin="25px 0px 0px -200px",
             children=Box(
                 children=[
                     # DateTime(format_list=["%A. %d %B"], name="date", interval=10000),
-                    Label(self.text, name="weather"),
-                    Label(self.alt+", Seoul", name="location"),
+                    self.update_weather_label,
+                    self.update_location_label,
+
                     # %I : 12h , %H : 24h
                     DateTime(format_list=["%H:%M"], name="clock"),
                 ],
                 orientation="v",
+                size=(100,100),
+                name="clock_widget_box",
             ),
             all_visible=True,
             exclusive=False,
         )
 
     def update_weather(self,fabricator, value):
-        # weather_output = subprocess.check_output(["/home/elsa/.config/fabric/desktop-widget/Weather.sh"])
-        #
-        # # 바이트 문자열을 문자열로 디코딩
-        # # weather_data = weather_output.decode("utf-8").strip()
-        # weather_data = json.loads(weather_output)
-        # print(weather_data)
-        #
-        # # 각 필드를 변수에 할당
-        # self.text  = weather_data["text"]
-        # self.alt   = weather_data["alt"]
-        # # tooltip = weather_data["tooltip"]
-        self.text = "test"
-        self.alt  = "yangchun-gu"
+        weather_output = subprocess.check_output(["/home/elsa/.config/fabric/desktop-widget/Weather.sh"])
+
+        # 바이트 문자열을 문자열로 디코딩
+        # weather_data = weather_output.decode("utf-8").strip()
+        weather_data = json.loads(weather_output)
+        print(weather_data)
+
+        # 각 필드를 변수에 할당
+        self.weather_text = weather_data["text"]
+        self.alt_text     = weather_data["alt"]
+        # tooltip = weather_data["tooltip"]
+
+        self.update_weather_label.set_label(self.weather_text)
+        self.update_location_label.set_label(self.alt_text+", Seoul")
 
 
 
@@ -77,13 +94,14 @@ class CalendarWidget(Window):
         self.update_calendar()
 
         super().__init__(
-            layer="bottom",
+            layer="layer",
             anchor="left top ",
             margin="30px 0px 0px 1970px",
             children=Box(
                 children=[
                     Label(self.calendar_text, name="calendar"),
-                ]
+                ],
+                size=(100,100),
             ),
             all_visible=True,
             exclusive=False,
@@ -118,15 +136,21 @@ class CalendarWidgetToday(Window):
     def __init__(self, **kwargs):
         self.calendar_text = ""
 
+        self.uptime_label = Label(
+            label=f"{self.calendar_text}",
+            name="calendar-today",
+        )
+
         self.update_calendar(None, None)
 
         super().__init__(
-            layer="bottom",
+            layer="layer",
             anchor="left top ",
             margin="30px 0px 0px 1970px",
             children=Box(
                 children=[
-                    Label(self.calendar_text, name="calendar-today"),
+                    # Label(self.calendar_text, name="calendar-today"),
+                    self.uptime_label,
                 ]
             ),
             all_visible=True,
@@ -137,6 +161,7 @@ class CalendarWidgetToday(Window):
         today = datetime.today()
         current_month_calendar = monthcalendar(today.year, today.month)
         self.calendar_text = self.generate_calendar_text(current_month_calendar)
+        self.uptime_label.set_label(self.calendar_text)
 
     def generate_calendar_text(self, month_calendar):
         today = datetime.today().day
@@ -157,6 +182,7 @@ class CalendarWidgetToday(Window):
         return calendar_text
 
 
+
 #===================================================================================================================
 class CalendarWidgetOverlay(Window):
     def __init__(self, **kwargs):
@@ -165,7 +191,7 @@ class CalendarWidgetOverlay(Window):
         self.update_calendar()
 
         super().__init__(
-            layer="bottom",
+            layer="layer",
             anchor="left top ",
             margin="30px 0px 0px 1970px",
             children=Box(
@@ -200,11 +226,11 @@ class CalendarWidgetOverlay(Window):
         return calendar_text
 
 
+
 #===================================================================================================================
 def apply_style(*args):
     logger.info("[Desktop Widget] CSS applied")
     return set_stylesheet_from_file(get_relative_path("desktop_widget.css"))
-
 
 
 
