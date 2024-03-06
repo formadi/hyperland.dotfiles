@@ -47,10 +47,11 @@ class ClockWidget(Window):
 
         self.update_weather(None, None)
 
+        # margin : top, right, bottom, left
         super().__init__(
             layer="layer",
             anchor="left top right",
-            margin="25px 0px 0px -200px",
+            margin="25px 1940px 0px 1640px",
             children=Box(
                 children=[
                     # DateTime(format_list=["%A. %d %B"], name="date", interval=10000),
@@ -61,7 +62,6 @@ class ClockWidget(Window):
                     DateTime(format_list=["%H:%M"], name="clock"),
                 ],
                 orientation="v",
-                size=(100,100),
                 name="clock_widget_box",
             ),
             all_visible=True,
@@ -95,13 +95,13 @@ class CalendarWidget(Window):
 
         super().__init__(
             layer="layer",
-            anchor="left top ",
-            margin="30px 0px 0px 1970px",
+            anchor="left top right",
+            margin="25px 1690px 0px 1910px",
             children=Box(
                 children=[
                     Label(self.calendar_text, name="calendar"),
                 ],
-                size=(100,100),
+                name="calendar_widget_box",
             ),
             all_visible=True,
             exclusive=False,
@@ -146,12 +146,14 @@ class CalendarWidgetToday(Window):
         super().__init__(
             layer="layer",
             anchor="left top ",
-            margin="30px 0px 0px 1970px",
+            # margin="30px 0px 0px 1970px",
+            margin="25px 1690px 0px 1910px",
             children=Box(
                 children=[
                     # Label(self.calendar_text, name="calendar-today"),
                     self.uptime_label,
-                ]
+                ],
+                name="calendar_widget_box",
             ),
             all_visible=True,
             exclusive=False,
@@ -193,11 +195,13 @@ class CalendarWidgetOverlay(Window):
         super().__init__(
             layer="layer",
             anchor="left top ",
-            margin="30px 0px 0px 1970px",
+            # margin="30px 0px 0px 1970px",
+            margin="25px 1690px 0px 1910px",
             children=Box(
                 children=[
                     Label(self.calendar_text, name="calendar-overlay"),
-                ]
+                ],
+                name="calendar_widget_box",
             ),
             all_visible=True,
             exclusive=False,

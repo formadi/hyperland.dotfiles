@@ -1,5 +1,5 @@
 /* uncomment if you do have pywal configured */
-/* @import url("/home/USER/.cache/wal/colors-widgets.css"); */
+ /* @import url("/home/USER/.cache/wal/colors.css"); */
 
 :vars {
     --background: #150d16;
@@ -79,4 +79,12 @@
 
 #clock_widget_box {
   background-color : alpha(#000000, 0.0);
+  border-radius: 15px;
+}
+
+#calendar_widget_box {
+  background-color : alpha(#000000, 0.0);
+  border-radius: 15px;
+  padding-left: 40px;
+  padding-top: 10px;
 }
