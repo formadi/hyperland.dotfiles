@@ -1,25 +1,40 @@
 [pyprland]
-plugins = [
-  "scratchpads",
-]
+plugins = ["scratchpads"]
 
 
-[scratchpads.stb]
+# [scratchpads.stb]
+# animation = "fromBottom"
+# command = "kitty --class foot-stb sstb"
+# class = "kitty-stb"
+# lazy = true
+# size = "75% 45%"
+#
+# [scratchpads.stb-logs]
+# animation = "fromTop"
+# command = "kitty --class foot-stb-logs stbLog"
+# class = "kitty-stb-logs"
+# lazy = true
+# size = "75% 40%"
+
+[scratchpads.term_b]
 animation = "fromBottom"
-command = "foot --class foot-stb sstb"
-class = "foot-stb"
+command = "kitty --class kitty-dropterm_b"
+class = "kitty-dropterm_b"
 lazy = true
-size = "75% 45%"
+size = "60% 60%"
 
-[scratchpads.stb-logs]
-animation = "fromTop"
-command = "foot --class foot-stb-logs stbLog"
-class = "foot-stb-logs"
+[scratchpads.term_l]
+animation = "fromLeft"
+# command = "firefox https://music.apple.com"
+command = "kitty --class kitty-dropterm_l"
+class = "kitty-dropterm_l"
+# class = "firefox"
 lazy = true
-size = "75% 40%"
+size = "60% 60%"
 
-[scratchpads.term]
-animation = "fromTop"
-command = "foot --class foot-dropterm"
-class = "foot-dropterm"
-size = "75% 60%"
+[scratchpads.term_r]
+animation = "fromRight"
+command = "kitty --class kitty-dropterm_r"
+class = "kitty-dropterm_r"
+lazy = true
+size = "60% 60%"

@@ -40,11 +40,14 @@ fi
 # ln -sf "$HOME/.cache/wal/cava-colors" "$HOME/.config/cava/config" || true
 
 # PJG : cava renewer
-/home/elsa/.config/cava/change-config-left.sh
-/home/elsa/.config/cava/change-config-right.sh
+# /home/elsa/.config/cava/change-config-left.sh
+# /home/elsa/.config/cava/change-config-right.sh
+/home/elsa/.config/cava/change-config-bottom.sh
+
 pkill -USR2 cava
-alacritty --config-file ~/.config/alacritty/cava-left.toml --title cava-left &
-alacritty --config-file ~/.config/alacritty/cava-right.toml --title cava-right &
+# alacritty --config-file ~/.config/alacritty/cava-left.toml --title cava-left &
+# alacritty --config-file ~/.config/alacritty/cava-right.toml --title cava-right &
+alacritty --config-file ~/.config/alacritty/cava-bottom.toml --title cava-bottom &
 
 
 exit 0

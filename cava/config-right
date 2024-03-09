@@ -21,12 +21,12 @@ framerate = 60
 
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-; bars = 0
+; bars = 100
 ; bar_width = 2
 ; bar_spacing = 1
 
 # For SDL width and space between bars is in pixels, defaults are:
-bar_width = 20
+bar_width   = 1
 bar_spacing = 1
 
 
@@ -130,7 +130,7 @@ bit_format = 16bit
 
 # SDL only support hex code colors, these are the default:
 ; background = '#111111'
-foreground = '#e6e6e4'
+foreground = '#c96d44'
 
 
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
@@ -142,14 +142,14 @@ foreground = '#e6e6e4'
 
 gradient = 0
 
-gradient_color_1 = '#e6e6e4'
-gradient_color_2 = '#d4a768'
-gradient_color_3 = '#cd8c53'
-gradient_color_4 = '#a26f49'
-gradient_color_5 = '#3e2f23'
-gradient_color_6 = '#b48f64'
-gradient_color_7 = '#a26f49'
-gradient_color_8 = '#3e2f23'
+gradient_color_1 = '#e9edee'
+gradient_color_2 = '#c96d44'
+gradient_color_3 = '#946d5b'
+gradient_color_4 = '#ac5735'
+gradient_color_5 = '#2e2425'
+gradient_color_6 = '#c4663d'
+gradient_color_7 = '#ac5735'
+gradient_color_8 = '#2e2425'
 
 
 
@@ -165,7 +165,7 @@ gradient_color_8 = '#3e2f23'
 
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.
 # Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
-; gravity = 100
+gravity = 150
 
 
 # In bar height, bars that would have been lower that this will not be drawn.

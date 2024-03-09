@@ -88,12 +88,14 @@ source = auto
 # 'sdl' uses the Simple DirectMedia Layer to render in a graphical context.
 method = ncurses
 
+orientation = top
+
 # Visual channels. Can be 'stereo' or 'mono'.
 # 'stereo' mirrors both channels with low frequencies in center.
 # 'mono' outputs left to right lowest to highest frequencies.
 # 'mono_option' set mono to either take input from 'left', 'right' or 'average'.
-channels = mono
-mono_option = left
+; channels = stereo
+; mono_option = average
 
 # Raw output target. A fifo will be created if target does not exist.
 ; raw_target = /dev/stdout
@@ -130,7 +132,7 @@ bit_format = 16bit
 
 # SDL only support hex code colors, these are the default:
 ; background = '#111111'
-foreground = '#c96d44'
+foreground = '#e8ebec'
 
 
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
@@ -142,14 +144,14 @@ foreground = '#c96d44'
 
 gradient = 0
 
-gradient_color_1 = '#e9edee'
-gradient_color_2 = '#c96d44'
-gradient_color_3 = '#946d5b'
-gradient_color_4 = '#ac5735'
-gradient_color_5 = '#2e2425'
-gradient_color_6 = '#c4663d'
-gradient_color_7 = '#ac5735'
-gradient_color_8 = '#2e2425'
+gradient_color_1 = '#e8ebec'
+gradient_color_2 = '#5d64aa'
+gradient_color_3 = '#2060a0'
+gradient_color_4 = '#aba45d'
+gradient_color_5 = '#5b3937'
+gradient_color_6 = '#3e50be'
+gradient_color_7 = '#aba45d'
+gradient_color_8 = '#5b3937'
 
 
 

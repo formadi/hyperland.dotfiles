@@ -21,12 +21,12 @@ framerate = 60
 
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-; bars = 0
+; bars = 100
 ; bar_width = 2
 ; bar_spacing = 1
 
 # For SDL width and space between bars is in pixels, defaults are:
-bar_width = 20
+bar_width   = 1
 bar_spacing = 1
 
 
@@ -87,6 +87,8 @@ source = auto
 #
 # 'sdl' uses the Simple DirectMedia Layer to render in a graphical context.
 method = ncurses
+
+orientation = top
 
 # Visual channels. Can be 'stereo' or 'mono'.
 # 'stereo' mirrors both channels with low frequencies in center.
@@ -165,7 +167,7 @@ gradient_color_8 = '{color15}'
 
 # Set gravity percentage for "drop off". Higher values means bars will drop faster.
 # Accepts only non-negative values. 50 means half gravity, 200 means double. Set to 0 to disable "drop off".
-; gravity = 100
+gravity = 150
 
 
 # In bar height, bars that would have been lower that this will not be drawn.

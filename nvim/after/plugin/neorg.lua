@@ -61,7 +61,7 @@ vim.keymap.set("n", "<Leader>nc", function()
   end
 
   vim.api.nvim_command("Neorg toggle-concealer")
-end, { desc = "journal tommorow", noremap = true, silent = true })
+end, { desc = "toggle conceal", noremap = true, silent = true })
 
 
 
