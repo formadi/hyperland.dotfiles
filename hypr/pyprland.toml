@@ -1,21 +1,5 @@
 [pyprland]
 plugins = ["scratchpads"]
-
-
-# [scratchpads.stb]
-# animation = "fromBottom"
-# command = "kitty --class foot-stb sstb"
-# class = "kitty-stb"
-# lazy = true
-# size = "75% 45%"
-#
-# [scratchpads.stb-logs]
-# animation = "fromTop"
-# command = "kitty --class foot-stb-logs stbLog"
-# class = "kitty-stb-logs"
-# lazy = true
-# size = "75% 40%"
-
 [scratchpads.term_b]
 animation = "fromBottom"
 command = "kitty --class kitty-dropterm_b"

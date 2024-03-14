@@ -40,6 +40,7 @@ yad --width=$dynamic_width --height=$dynamic_height \
 "ESC" "close this app" "" "=" "SUPER KEY (Windows Key)" "(SUPER KEY)" \
 " enter" "Terminal" "(foot)" \
 "ALT" "App Launcher" "(rofi)" \
+" SHIFT M" "rofi internet radio" "(mpv)" \
 " T" "Open File Manager" "(Thunar)" \
 " Q" "close active window" "(not kill)" \
 " Shift Q " "closes a specified window" "(window)" \

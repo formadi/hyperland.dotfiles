@@ -1,2 +1,0 @@
-#!/bin/sh
-socat - "UNIX-CONNECT:/tmp/hypr/${HYPRLAND_INSTANCE_SIGNATURE}/.pyprland.sock" <<< $@

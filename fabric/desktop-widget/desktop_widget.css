@@ -45,7 +45,6 @@
     font-family: "Iosevka Nerd Font";
     color : #E6CF6C;
     font-size: 18px;
-    padding-bottom: 0px;
 }
 
 #location {
@@ -53,12 +52,13 @@
     font-family: "Iosevka Nerd Font";
     color : #E6CF6C;
     font-size: 12px;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
 }
 
 #clock > label {
-    font-size: 80px;
+    font-size: 70px;
     font-weight: 900;
+    padding-bottom: 5px;
 }
 
 #calendar {
@@ -87,13 +87,13 @@
   border-radius: 10px;
   padding-top:10px;
   padding-left:20px;
-  padding-right:220px;
-  padding-bottom:10px;
+  padding-right:300px;
+  padding-bottom:0px;
 }
 
 #calendar_widget_box {
   background-color : alpha(#000000, 0.0);
   /* border-radius: 15px; */
-  padding-left: 40px;
+  padding-left: 170px;
   /* padding-top: 10px; */
 }
