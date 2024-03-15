@@ -278,7 +278,7 @@
 
 "hyprland/window": {
     "format": "{}",
-    "max-length": 40,
+    "max-length": 150,
     "separate-outputs": true,
     "offscreen-css" : true,
     "offscreen-css-text": "(inactive)",
@@ -612,7 +612,7 @@
 },
 
 "custom/separator#blank_3": {
-	"format": "   ",
+  "format": "   ",
     "interval": "once",
     "tooltip": false
 },

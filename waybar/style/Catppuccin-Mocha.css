@@ -2,13 +2,13 @@
 /* Catppuccin Mocha */
 
 * {
-font-family: "JetBrainsMono Nerd Font";
-font-weight: bold;
-min-height: 0;
-/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-font-size: 103%;
-font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-padding: 1px;
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  min-height: 0;
+  /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+  font-size: 103%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  padding: 1px;
 }
 
 @import "../waybar/style/catppuccin-themes/mocha.css";
@@ -17,7 +17,7 @@ window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
   background: transparent;
-  /*border: 2px solid @overlay0;*/
+  /* border: 1px solid @overlay0; */
   /*background: @theme_base_color;*/
   border-radius: 10px;
 }
@@ -33,17 +33,17 @@ window#waybar.hidden {
 /* This section can be use if you want to separate waybar modules */
 .modules-left, .modules-center, .modules-right {
 	background: @theme_base_color;
- 	border: 0px solid @blue;
+ 	border: 2px solid #bba6f7; /*@white;*/
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-right: 4px;
 	padding-left: 4px;
-	border-radius: 10px;
+	border-radius: 8px;
 
 }
 
 .modules-left, .modules-right {
- 	border: 0px solid @blue;
+ 	border: 2px solid #bba6f7;  /* @white; */
 	padding-top: 2px;
 	padding-bottom: 2px;
 	padding-right: 4px;
