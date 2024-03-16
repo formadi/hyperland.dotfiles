@@ -62,3 +62,14 @@ opt.signcolumn = "auto:3"
 
 -- remove vim-signature mark "~"
 vim.opt.shada = "!,'0,f0,<50,s10,h"
+
+-- add hyprland syntax highlighting
+vim.filetype.add {
+  extension = { rasi = 'rasi' },
+  pattern = {
+    ['.*/waybar/config'] = 'jsonc',
+    ['.*/mako/config'] = 'dosini',
+    ['.*/kitty/*.conf'] = 'bash',
+    ['.*/hypr/.*%.conf'] = 'hyprlang',
+  },
+}
