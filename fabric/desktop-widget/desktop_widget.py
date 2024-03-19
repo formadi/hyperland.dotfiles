@@ -4,6 +4,7 @@
 import fabric
 import os
 import json
+import sys
 import subprocess
 from datetime import datetime
 from calendar import monthcalendar
@@ -50,9 +51,9 @@ class ClockWidget(Window):
         # margin : top, right, bottom, left
         super().__init__(
             name="clockWindow",
-            layer="bottom",
+            layer="top",
             anchor="left top",
-            margin="0px 1700px 10px 1670px",
+            margin="6px 1700px 10px 1670px",
             children=Box(
                 children=[
                     # DateTime(format_list=["%A. %d %B"], name="date", interval=10000),
@@ -72,15 +73,20 @@ class ClockWidget(Window):
     def update_weather(self,fabricator, value):
         weather_output = subprocess.check_output(["/home/elsa/.config/fabric/desktop-widget/Weather.sh"])
 
+        self.weather_text = ""
+        self.alt_text = ""
         # 바이트 문자열을 문자열로 디코딩
         # weather_data = weather_output.decode("utf-8").strip()
-        weather_data = json.loads(weather_output)
-        print(weather_data)
-
-        # 각 필드를 변수에 할당
-        self.weather_text = weather_data["text"]
-        self.alt_text     = weather_data["alt"]
-        # tooltip = weather_data["tooltip"]
+        try:
+            weather_data = json.loads(weather_output)
+        except json.JSONDecodeError as e:
+            print("오류 메시지:",e)
+        else:
+            print(weather_data)
+            # 각 필드를 변수에 할당
+            self.weather_text = weather_data["text"]
+            self.alt_text     = weather_data["alt"]
+            # tooltip = weather_data["tooltip"]
 
         self.update_weather_label.set_label(self.weather_text)
         self.update_location_label.set_label(self.alt_text+", Seoul")
@@ -95,9 +101,9 @@ class CalendarWidget(Window):
         self.update_calendar()
 
         super().__init__(
-            layer="bottom",
+            layer="top",
             anchor="left top",
-            margin="13px 1690px 0px 1810px",
+            margin="19px 1690px 0px 1810px",
             children=Box(
                 children=[
                     Label(self.calendar_text, name="calendar"),
@@ -145,10 +151,10 @@ class CalendarWidgetToday(Window):
         self.update_calendar(None, None)
 
         super().__init__(
-            layer="bottom",
+            layer="top",
             anchor="left top",
             # margin="30px 0px 0px 1970px",
-            margin="13px 1690px 0px 1810px",
+            margin="19px 1690px 0px 1810px",
             children=Box(
                 children=[
                     # Label(self.calendar_text, name="calendar-today"),
@@ -194,10 +200,10 @@ class CalendarWidgetOverlay(Window):
         self.update_calendar()
 
         super().__init__(
-            layer="bottom",
+            layer="top",
             anchor="left top",
             # margin="30px 0px 0px 1970px",
-            margin="13px 1690px 0px 1810px",
+            margin="19px 1690px 0px 1810px",
             children=Box(
                 children=[
                     Label(self.calendar_text, name="calendar-overlay"),

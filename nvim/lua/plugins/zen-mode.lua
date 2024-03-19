@@ -3,6 +3,7 @@ return {
   -- no-nect-pain first and zen-mode last.
   {
     "shortcuts/no-neck-pain.nvim",
+    version = "*",
     config = function()
       require("no-neck-pain").setup({
 
@@ -38,6 +39,7 @@ return {
           z = {
             name = "Zen Mode",
             r = { "<cmd>NoNeckPainResize 120<CR>",    "resize to 160"         },
+            -- z = { "<cmd>NoNeckPain<CR>",    "toggle"         },
             i = { "<cmd>NoNeckPainWidthUp<CR><cmd>NoNeckPainWidthUp<CR><cmd>NoNeckPainWidthUp<CR><cmd>NoNeckPainWidthUp<CR>",             "window size increse"   },
             d = { "<cmd>NoNeckPainWidthDown<CR><cmd>NoNeckPainWidthDown<CR><cmd>NoNeckPainWidthDown<CR><cmd>NoNeckPainWidthDown<CR>",     "window size decrese"   },
           },
@@ -48,6 +50,8 @@ return {
 
 
       local center_buffer_width_ratio = 0.55
+      local nvim_width = vim.o.columns
+      local resizeValue = math.floor(nvim_width * center_buffer_width_ratio)
 
       -- Zen Mode Toggle = Neotree Toggle
       vim.keymap.set("n", "<Leader>zz", function()
@@ -57,8 +61,7 @@ return {
           end
           vim.api.nvim_command("NoNeckPain")
 
-          local nvim_width = vim.o.columns
-          vim.api.nvim_command("NoNeckPainResize " .. math.floor(nvim_width * center_buffer_width_ratio))  -- customiz size...
+          vim.api.nvim_command("NoNeckPainResize " .. resizeValue)  -- customiz size...
           _G.zen_toggle = true
         else
           if _G.neotree_open == false then
