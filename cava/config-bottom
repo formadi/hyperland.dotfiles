@@ -132,7 +132,7 @@ bit_format = 16bit
 
 # SDL only support hex code colors, these are the default:
 ; background = '#111111'
-foreground = '#f5f2f3'
+foreground = '#fdf8fc'
 
 
 # Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
@@ -144,14 +144,14 @@ foreground = '#f5f2f3'
 
 gradient = 0
 
-gradient_color_1 = '#f5f2f3'
-gradient_color_2 = '#d2a9b2'
-gradient_color_3 = '#aa98ad'
-gradient_color_4 = '#9e6caa'
-gradient_color_5 = '#574643'
-gradient_color_6 = '#9d6bd2'
-gradient_color_7 = '#9e6caa'
-gradient_color_8 = '#574643'
+gradient_color_1 = '#fdf8fc'
+gradient_color_2 = '#ae849f'
+gradient_color_3 = '#a87794'
+gradient_color_4 = '#75628a'
+gradient_color_5 = '#432e3c'
+gradient_color_6 = '#9b6c8e'
+gradient_color_7 = '#75628a'
+gradient_color_8 = '#432e3c'
 
 
 

@@ -65,7 +65,7 @@ return {
       maximum_width = 50,
       render        = "default",
       stages        = "slide",
-      timeout       = 6000,
+      timeout       = 2000,
     })
 
     -- set keymaps
