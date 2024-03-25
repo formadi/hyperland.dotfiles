@@ -8,6 +8,7 @@ command = "kitty --class kitty-dropterm_b musikcube"
 class = "kitty-dropterm_b"
 lazy = true
 size = "40% 40%"
+margin = 600
 
 [scratchpads.term_l]
 animation = "fromLeft"
@@ -17,6 +18,7 @@ class = "kitty-dropterm_l"
 # class = "firefox"
 lazy = true
 size = "40% 70%"
+margin = 1150
 
 [scratchpads.term_r]
 animation = "fromRight"
@@ -24,3 +26,4 @@ command = "kitty --class kitty-dropterm_r"
 class = "kitty-dropterm_r"
 lazy = true
 size = "40% 70%"
+margin = 1150
