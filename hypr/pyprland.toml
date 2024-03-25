@@ -2,10 +2,12 @@
 plugins = ["scratchpads"]
 [scratchpads.term_b]
 animation = "fromBottom"
-command = "kitty --class kitty-dropterm_b"
+# launch ncmpcpp
+# command = "kitty --class kitty-dropterm_b ncmpcpp"
+command = "kitty --class kitty-dropterm_b musikcube"
 class = "kitty-dropterm_b"
 lazy = true
-size = "60% 60%"
+size = "40% 40%"
 
 [scratchpads.term_l]
 animation = "fromLeft"
@@ -14,11 +16,11 @@ command = "kitty --class kitty-dropterm_l"
 class = "kitty-dropterm_l"
 # class = "firefox"
 lazy = true
-size = "60% 60%"
+size = "40% 70%"
 
 [scratchpads.term_r]
 animation = "fromRight"
 command = "kitty --class kitty-dropterm_r"
 class = "kitty-dropterm_r"
 lazy = true
-size = "60% 60%"
+size = "40% 70%"

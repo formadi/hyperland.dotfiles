@@ -60,8 +60,11 @@ return {
             vim.api.nvim_command("Neotree toggle")
           end
           vim.api.nvim_command("NoNeckPain")
-
-          vim.api.nvim_command("NoNeckPainResize " .. resizeValue)  -- customiz size...
+          -- vim.api.nvim_command("NoNeckPainResize " .. resizeValue)  -- customiz size...
+              -- NoNeckPain 함수가 완료된 후에 NoNeckPainResize를 호출하기 위해 vim.schedule()을 사용합니다.
+          -- vim.schedule(function()
+          --   vim.api.nvim_command("NoNeckPainResize " .. resizeValue)  -- customize size...
+          -- end)
           _G.zen_toggle = true
         else
           if _G.neotree_open == false then
