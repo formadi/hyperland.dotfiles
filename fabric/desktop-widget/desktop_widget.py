@@ -54,6 +54,7 @@ class ClockWidget(Window):
             layer="top",
             anchor="left top",
             margin="6px 1700px 10px 1670px",
+            # margin="6px 1700px 10px 1820px",
             children=Box(
                 children=[
                     # DateTime(format_list=["%A. %d %B"], name="date", interval=10000),
@@ -104,6 +105,7 @@ class CalendarWidget(Window):
             layer="top",
             anchor="left top",
             margin="19px 1690px 0px 1810px",
+            # margin="19px 1690px 0px 1920px",
             children=Box(
                 children=[
                     Label(self.calendar_text, name="calendar"),
@@ -153,8 +155,8 @@ class CalendarWidgetToday(Window):
         super().__init__(
             layer="top",
             anchor="left top",
-            # margin="30px 0px 0px 1970px",
             margin="19px 1690px 0px 1810px",
+            # margin="19px 1690px 0px 1920px",
             children=Box(
                 children=[
                     # Label(self.calendar_text, name="calendar-today"),
@@ -202,8 +204,8 @@ class CalendarWidgetOverlay(Window):
         super().__init__(
             layer="top",
             anchor="left top",
-            # margin="30px 0px 0px 1970px",
             margin="19px 1690px 0px 1810px",
+            # margin="19px 1690px 0px 1920px",
             children=Box(
                 children=[
                     Label(self.calendar_text, name="calendar-overlay"),

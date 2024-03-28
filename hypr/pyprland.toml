@@ -4,8 +4,9 @@ plugins = ["scratchpads"]
 animation = "fromBottom"
 # launch ncmpcpp
 # command = "kitty --class kitty-dropterm_b ncmpcpp"
-command = "kitty --class kitty-dropterm_b musikcube"
-class = "kitty-dropterm_b"
+# command = "kitty --class kitty-dropterm_b musikcube"   # for kitty terminal
+command = "foot -a foot-dropterm_b musikcube"           # for foot terminal
+class = "foot-dropterm_b"
 lazy = true
 size = "40% 40%"
 margin = 600
@@ -13,17 +14,38 @@ margin = 600
 [scratchpads.term_l]
 animation = "fromLeft"
 # command = "firefox https://music.apple.com"
-command = "kitty --class kitty-dropterm_l"
-class = "kitty-dropterm_l"
-# class = "firefox"
+# command = "kitty --class kitty-dropterm_l"
+command = "foot -a foot-dropterm_l"
+class = "foot-dropterm_l"
 lazy = true
 size = "40% 70%"
+# margin = 1250  # for LG TV
 margin = 1150
 
 [scratchpads.term_r]
 animation = "fromRight"
-command = "kitty --class kitty-dropterm_r"
-class = "kitty-dropterm_r"
+# command = "kitty --class kitty-dropterm_r tuir"
+command = "foot -a foot-dropterm_r"
+class = "foot-dropterm_r"
 lazy = true
 size = "40% 70%"
+# margin = 1250  # for LG TV
 margin = 1150
+
+
+[scratchpads.term_t]
+animation = "fromTop"
+command = "blueman-manager"
+class = "blueman-manager"
+lazy = true
+size = "20% 30%"
+margin = 700
+
+
+[scratchpads.term_t2]
+animation = "fromTop"
+command = "pavucontrol -t 3"
+class = "pavucontrol"
+lazy = true
+size = "20% 30%"
+margin = 700
